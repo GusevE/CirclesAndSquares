@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/GusevE/CirclesAndSquares/static/css/main.3211ba73.css",
+    "main.js": "/GusevE/CirclesAndSquares/static/js/main.cbd8b459.js",
+    "static/js/496.db0ca9a0.chunk.js": "/GusevE/CirclesAndSquares/static/js/496.db0ca9a0.chunk.js",
+    "index.html": "/GusevE/CirclesAndSquares/index.html",
+    "main.3211ba73.css.map": "/GusevE/CirclesAndSquares/static/css/main.3211ba73.css.map",
+    "main.cbd8b459.js.map": "/GusevE/CirclesAndSquares/static/js/main.cbd8b459.js.map",
+    "496.db0ca9a0.chunk.js.map": "/GusevE/CirclesAndSquares/static/js/496.db0ca9a0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3211ba73.css",
+    "static/js/main.cbd8b459.js"
+  ]
+}
