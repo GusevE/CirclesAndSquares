@@ -2,7 +2,7 @@ import Box from "@mui/material/Box/Box";
 import { useAppSelector } from "../store/hooks";
 
 export default function Shapes() {
-  const { data } = useAppSelector((state) => state.LayoutTemplateState);
+  const { figuresData } = useAppSelector((state) => state.LayoutTemplateState);
   return (
     <Box
       sx={{
@@ -13,7 +13,7 @@ export default function Shapes() {
         margin: "0 auto",
       }}
     >
-      {data.map(({ form, color, dark, id }) => (
+      {figuresData.map(({ form, color, id }) => (
         <Box
           key={id}
           sx={{

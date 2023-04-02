@@ -7,37 +7,40 @@ import Menu from "@mui/material/Menu";
 import FormControlLabel from "@mui/material/FormControlLabel/FormControlLabel";
 import Box from "@mui/material/Box/Box";
 import Checkbox from "@mui/material/Checkbox/Checkbox";
-import { Database } from "../data";
-import { ColorType, RadioButtonType } from "../model";
-import { helperObject, isRadioButton } from "../store/layoutTemplate/utils";
+
+import { Database } from "../DefaulData";
+import { ColorType, RadioButtonType } from "../types/types";
+import { helperObject } from "../DefaulData";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { filter } from "../store/layoutTemplate/LayoutTemplateSlice";
+import { filter } from "../store/layaoutController/LayoutController";
 import { useState } from "react";
+import { isRadioButton, radioButton } from "../plagin";
 
 export interface Props {
   anchorEl: null | HTMLElement;
   open: boolean;
   handleClose: () => void;
 }
+
 let colorCheck = [...new Set(Database.map((e) => e.color as ColorType))];
-export const radioButton: RadioButtonType[] = ["all", "dark", "light"];
 
 export default function SideBar(props: Props) {
   const { anchorEl, handleClose, open } = props;
 
-  const { data } = useAppSelector((state) => state.LayoutTemplateState);
+  const { figuresData } = useAppSelector((state) => state.LayoutTemplateState);
   const [selectedValue, setSelectedValue] = useState<string>("all");
   const dispatch = useAppDispatch();
   const checkedValue = (name: string) => {
-    return !!data.some(({ color }) => color === name);
+    return !!figuresData.some(({ color }) => color === name);
   };
 
-   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (isRadioButton(event.target.value)) {
-      setSelectedValue(event.target.value);
-      dispatch(filter(event.target.value));
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    if (isRadioButton(value)) {
+      setSelectedValue(value);
+      dispatch(filter(value));
     } else {
-      dispatch(filter(event.target.value));
+      dispatch(filter(value));
     }
   };
 

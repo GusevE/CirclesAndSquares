@@ -1,18 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Database } from '../../data';
-import { Shapes } from '../../model';
+import { Database } from '../../DefaulData';
+import { Shapes } from '../../types/model';
 import universalFilter from './utils';
 
-
 interface LayoutTemplateState{
-
-  data: Shapes[]
+  figuresData: Shapes[]
 }
 
 const initial: LayoutTemplateState = {
-  data: Database
+  figuresData: Database
 };
-
 
 export const LayoutTemplateState = createSlice({
   name: 'layoutTemplate',
@@ -20,8 +17,7 @@ export const LayoutTemplateState = createSlice({
 
   reducers: {
     filter: (state, { payload }: PayloadAction<string>)=> {
-      
-        state.data = universalFilter(payload)
+        state.figuresData = universalFilter(payload)
     },
   },
 });

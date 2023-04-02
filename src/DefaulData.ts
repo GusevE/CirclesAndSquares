@@ -1,4 +1,15 @@
-import { Shapes } from "./model";
+import { HelperObjectType, Shapes } from "./types/model";
+export const helperObject: HelperObjectType = {
+    blue: "Голубой",
+    yellow: "Желтый",
+    red: "Красный",
+    green: "Зеленый",
+    circle: "Круги",
+    square: "Квадраты",
+    all: "Все",
+    dark: "Тёмные",
+    light: "Светлые",
+  };
 
 export const  Database: Shapes[] = [
 	{	
