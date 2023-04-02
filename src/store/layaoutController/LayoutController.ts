@@ -5,10 +5,13 @@ import universalFilter from './utils';
 
 interface LayoutTemplateState{
   figuresData: Shapes[]
+  numberСolumns: number
+
 }
 
 const initial: LayoutTemplateState = {
-  figuresData: Database
+  figuresData: Database,
+  numberСolumns: 4
 };
 
 export const LayoutTemplateState = createSlice({
@@ -19,11 +22,15 @@ export const LayoutTemplateState = createSlice({
     filter: (state, { payload }: PayloadAction<string>)=> {
         state.figuresData = universalFilter(payload)
     },
+    changeColomStore: (state, { payload }: PayloadAction<number>)=> {
+      state.numberСolumns = payload
+    }
   },
 });
 
 export const {
   filter,
+  changeColomStore,
 } = LayoutTemplateState.actions;
 
 export default LayoutTemplateState.reducer;

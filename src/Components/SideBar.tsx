@@ -12,7 +12,10 @@ import { Database } from "../DefaulData";
 import { ColorType, RadioButtonType } from "../types/types";
 import { helperObject } from "../DefaulData";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { filter } from "../store/layaoutController/LayoutController";
+import {
+  changeColomStore,
+  filter,
+} from "../store/layaoutController/LayoutController";
 import { useState } from "react";
 import { isRadioButton, radioButton } from "../plagin";
 
@@ -27,7 +30,9 @@ let colorCheck = [...new Set(Database.map((e) => e.color as ColorType))];
 export default function SideBar(props: Props) {
   const { anchorEl, handleClose, open } = props;
 
-  const { figuresData } = useAppSelector((state) => state.LayoutTemplateState);
+  const { figuresData, numberСolumns } = useAppSelector(
+    (state) => state.LayoutTemplateState
+  );
   const [selectedValue, setSelectedValue] = useState<string>("all");
   const dispatch = useAppDispatch();
   const checkedValue = (name: string) => {
@@ -83,13 +88,14 @@ export default function SideBar(props: Props) {
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Typography>Колонки</Typography>
           <TextField
-            value={4}
             size="small"
-            sx={{
-              paddingLeft: 2,
-              width: "60px",
+            value={numberСolumns}
+            onChange={(e) => dispatch(changeColomStore(+e.target.value))}
+            type="number"
+            InputProps={{ inputProps: { min: 3, max: 6 } }}
+            InputLabelProps={{
+              shrink: true,
             }}
-            variant="outlined"
           />
         </Box>
       </Box>

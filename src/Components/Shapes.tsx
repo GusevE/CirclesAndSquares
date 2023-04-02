@@ -2,14 +2,16 @@ import Box from "@mui/material/Box/Box";
 import { useAppSelector } from "../store/hooks";
 
 export default function Shapes() {
-  const { figuresData } = useAppSelector((state) => state.LayoutTemplateState);
+  const { figuresData, numberСolumns } = useAppSelector(
+    (state) => state.LayoutTemplateState
+  );
   return (
     <Box
       sx={{
         display: "flex",
         justifyContent: "center",
         flexWrap: "wrap",
-        width: "600px",
+        width: `${numberСolumns + 2}90px`,
         margin: "0 auto",
       }}
     >
