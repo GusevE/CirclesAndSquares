@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/CirclesAndSquares/static/css/main.3211ba73.css",
-    "main.js": "/CirclesAndSquares/static/js/main.0ac82de3.js",
-    "static/js/496.db0ca9a0.chunk.js": "/CirclesAndSquares/static/js/496.db0ca9a0.chunk.js",
+    "main.css": "/CirclesAndSquares/static/css/main.1d5d98c6.css",
+    "main.js": "/CirclesAndSquares/static/js/main.7afab0ea.js",
     "index.html": "/CirclesAndSquares/index.html",
-    "main.3211ba73.css.map": "/CirclesAndSquares/static/css/main.3211ba73.css.map",
-    "main.0ac82de3.js.map": "/CirclesAndSquares/static/js/main.0ac82de3.js.map",
-    "496.db0ca9a0.chunk.js.map": "/CirclesAndSquares/static/js/496.db0ca9a0.chunk.js.map"
+    "main.1d5d98c6.css.map": "/CirclesAndSquares/static/css/main.1d5d98c6.css.map",
+    "main.7afab0ea.js.map": "/CirclesAndSquares/static/js/main.7afab0ea.js.map"
   },
   "entrypoints": [
-    "static/css/main.3211ba73.css",
-    "static/js/main.0ac82de3.js"
+    "static/css/main.1d5d98c6.css",
+    "static/js/main.7afab0ea.js"
   ]
 }
